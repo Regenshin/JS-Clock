@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="display"> <H2 id="tz">Time Zone</H2>
+<H1 id="day">Mon</H1> <H1 id="dom">00</H1> <H1>OF</H1> <H1 id="month">Month</H1> <H1 id="year">Year</H1> 
+<div class="container">
+<div class="clockie">
+<span id="hr">00</span>
+<span >:</span>
+<span id="min">00</span>
+<span>:</span>
+<span id="sec">00</span>
+</div>
+</div>
+</div>
+
+<script>
+let hr= document.getElementById('hr');
+let min= document.getElementById('min');
+let sec= document.getElementById('sec');
+let day= document.getElementById('day');
+let dom= document.getElementById('dom');
+let Year= document.getElementById('year');
+let month= document.getElementById('month');
+let tz=document.getElementById('tz')
+
+
+
+setInterval(()=>{
+let time= new Date();
+let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+hr.innerHTML=(time.getHours()<10?"0":"")+time.getHours();
+min.innerHTML=(time.getMinutes()<10?"0":"")+time.getMinutes();
+sec.innerHTML=(time.getSeconds()<10?"0":"")+time.getSeconds();
+day.innerHTML=days[time.getDay()];
+dom.innerHTML=(time.getDate()<10?"0":"")+time.getDate();
+month.innerHTML=months[time.getMonth()];
+year.innerHTML=(time.getFullYear()<10?"0":"")+time.getFullYear();
+tz.innerHTML=Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+
+},1000)
+
+</script>
+</body>
+</html>
