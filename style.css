@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
 }
 
 .container{
@@ -124,7 +125,6 @@ h1{
 align-self:self-end;
 font-size: 60px;
     width: 210px ;
-    display: inline-block;
     text-align: center;
     position: relative;
 }
@@ -180,7 +180,27 @@ font-size: 60px;
 
 }
 
+
 @media (max-width: 768px) {
+    
+   .display>#tz{
+    font-size: 12px;
+    width: 100px;
+    z-index: 1;
+    margin-left: 50%;
+    
+   
+
+   }
+
+   .clockie > #hr::after,
+    .clockie > #min::after,
+    .clockie > #sec::after {
+        font-size: 12px;
+        
+        
+
+    }
     .container {
         width: 90%;
         height: 40%;
@@ -191,18 +211,18 @@ font-size: 60px;
         width: 80px;
     }
 
-    .display h1 {
-        font-size: 40px;
-        width: 50%;
-    }
     .display>#month{
         padding-right: 15px;
     }
     .container::before{
         top: -20%;
+        left: -3%;
+    
     }
     .container::after{
-        top: 50%;
+        top: 60%;
+        
+        right:-3%;
     }
     .display > #day::before,
     .display > #dom::before,
@@ -212,15 +232,27 @@ font-size: 60px;
         visibility: hidden;
     }
 
-    .display H1{
-        padding-left: 20px ;
+    .display>#day,
+    .display>#month,
+    .display>#dom,
+    .display>#year,
+    .display>#of{
+        font-size: 41px;
+        padding: 10px;
+        position: relative;
+        justify-self: center;
+        top: -50px;
+        left: -40%;
+        z-index: 3;
+        
     }
 }
 
 @media (max-width: 480px) {
+    
     .container {
-        width: 100%;
-        height: 50%;
+        width: 60%;
+        height: 10%;
     }
 
     .clockie span {
@@ -231,18 +263,27 @@ font-size: 60px;
     .display h1 {
         font-size: 30px;
         width: auto;
+         top: -50px;
     }
 
     .clockie > #hr::after,
     .clockie > #min::after,
     .clockie > #sec::after {
         font-size: 12px;
+        
 
     }
 
     .container::before{
         bottom: 20%;
     }
+
+    .container::after{
+        top:20%;
+        left: -40%;
+    }
+
+
     .display > #day::before,
     .display > #dom::before,
     .display > #month::before,
@@ -253,6 +294,4 @@ font-size: 60px;
 
     
 }
-
-
 
