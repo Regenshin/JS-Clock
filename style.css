@@ -131,6 +131,7 @@ font-size: 60px;
 .display > #day::before{
     content: 'Week Day';
     font-family: 'Poppins', sans-serif;
+    width: 80%;
     font-size: 30%;
     position: absolute;
     top: -15px;
@@ -176,5 +177,79 @@ font-size: 60px;
     font-family: 'Poppins', sans-serif;
     
 
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 40%;
+    }
+
+    .clockie span {
+        font-size: 40px;
+        width: 80px;
+    }
+
+    .display h1 {
+        font-size: 40px;
+        width: 50%;
+    }
+    .display>#month{
+        padding-right: 15px;
+    }
+    .container::before{
+        top: -20%;
+    }
+    .container::after{
+        top: 50%;
+    }
+    .display > #day::before,
+    .display > #dom::before,
+    .display > #month::before,
+    .display > #year::before{
+        font-size:12px ;
+        visibility: hidden;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        height: 50%;
+    }
+
+    .clockie span {
+        font-size: 30px;
+        width: 60px;
+    }
+
+    .display h1 {
+        font-size: 30px;
+        width: auto;
+    }
+
+    .clockie > #hr::after,
+    .clockie > #min::after,
+    .clockie > #sec::after {
+        font-size: 12px;
+
+    }
+
+    .container::before{
+        bottom: 20%;
+    }
+    .display > #day::before,
+    .display > #dom::before,
+    .display > #month::before,
+    .display > #year::before{
+        font-size:10px ;
+        width: 95%;
+    }
+
+    .display>#month{
+        padding-right: 40px;
+    }
 }
 
